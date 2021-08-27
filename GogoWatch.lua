@@ -34,7 +34,7 @@ function GGWTest.Events:CombatLogEventUnfiltered(...)
             local curRank = curSpell.Rank
             local sourceLevel = UnitLevel("Player")
             if curSpell.LevelBase == "Self" then
-                if curSpell.MaxLevel < sourceLevel then
+                if curSpell.MaxLevel < sourceLevel and curSpell.MaxLevel ~= 0 then
                     print(string.format("You casted Rank %d %s (%s) as a level %s, you should be using a higher rank!", curRank, spellName, spellID, sourceLevel))
                 end
             elseif curSpell.LevelBase == "Target" then
