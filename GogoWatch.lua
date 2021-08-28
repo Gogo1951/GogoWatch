@@ -26,21 +26,21 @@ end
 function GGWTest.Events:CombatLogEventUnfiltered(...)
     local _, subevent, _, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, spellSchool = CombatLogGetCurrentEventInfo()
     if subevent == "SPELL_CAST_SUCCESS" and sourceGUID == UnitGUID("Player") then
-        local _, _, unitClass = UnitClass("Player")
-        local curSpell = GGWTest.Classes[unitClass].SpellIDs[spellID]
+        local curSpell = GGWTest.SpellIDs[spellID]
+        local Strings = GGWTest.Strings
         if curSpell == nil then
-            print(string.format("You casted %s (%s).", spellName, spellID))
+            print(string.format(Strings.tempDevCastString, spellName, spellID))
         else
             local curRank = curSpell.Rank
             local sourceLevel = UnitLevel("Player")
             if curSpell.LevelBase == "Self" then
                 if curSpell.MaxLevel < sourceLevel and curSpell.MaxLevel ~= 0 then
-                    print(string.format("You casted Rank %d %s (%s) as a level %s, you should be using a higher rank!", curRank, spellName, spellID, sourceLevel))
+                    print(string.format(Strings.YouCastedSelf, Strings.UseHigher, curRank, spellName, spellID, sourceLevel))
                 end
             elseif curSpell.LevelBase == "Target" then
                 local destLevel = UnitLevel(destName)
-                if destLevel ~= 0 and curSpell.MaxLevel < destLevel then
-                    print(string.format("You casted Rank %d %s (%s) on a level %s target, you should be using a higher rank!", curRank, spellName, spellID, destLevel))
+                if destLevel ~= 0 and curSpell.MaxLevel < destLevel and curSpell.MaxLevel ~= 0 then
+                    print(string.format(Strings.YouCastedSelf, Strings.YouCastedTarget, curRank, spellName, spellID, destLevel))
                 end
             end
         end
