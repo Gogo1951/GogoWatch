@@ -2,7 +2,7 @@ if GGWTest == nill then GGWTest = {} end
 
 GGWTest.Strings =
 {
-    tempDevCastString = "You casted %s (%s), this spell is not being tracked ATM! (Temporary Message).",
+    tempDevCastString = "{rt7} GogoWatch : Hey Friend, you just used a low rank of %s (%s). Please check your Action Bar or visit your Class Trainer to make sure you've got the right ability for your level.",
     YouCastedSelf     = "You casted Rank %d %s (%s) as a level %s",
     YouCastedTarget   = "You casted Rank %d %s (%s) on a level %s target",
     UseHigher         = ", you should be using a higher rank!",
