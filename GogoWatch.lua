@@ -35,12 +35,12 @@ function GGWTest.Events:CombatLogEventUnfiltered(...)
             local sourceLevel = UnitLevel("Player")
             if curSpell.LevelBase == "Self" then
                 if curSpell.MaxLevel < sourceLevel and curSpell.MaxLevel ~= 0 then
-                    print(string.format(Strings.YouCastedSelf, Strings.UseHigher, curRank, spellName, spellID, sourceLevel))
+                    print(string.format(Strings.YouCastedSelf, curRank, spellName, spellID, sourceLevel, Strings.UseHigher))
                 end
             elseif curSpell.LevelBase == "Target" then
                 local destLevel = UnitLevel(destName)
                 if destLevel ~= 0 and curSpell.MaxLevel < destLevel and curSpell.MaxLevel ~= 0 then
-                    print(string.format(Strings.YouCastedSelf, Strings.YouCastedTarget, curRank, spellName, spellID, destLevel))
+                    print(string.format(Strings.YouCastedSelf, curRank, spellName, spellID, destLevel, Strings.YouCastedTarget))
                 end
             end
         end
