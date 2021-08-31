@@ -31,23 +31,31 @@ function GogoWatch:OnEvent(self, event, ...)
 end
 
 function GogoWatch.Events:CombatLogEventUnfiltered(...)
-    local _, subevent, _, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, spellID, spellName, spellSchool = CombatLogGetCurrentEventInfo()
-    if subevent == "SPELL_CAST_SUCCESS" and sourceGUID == UnitGUID("Player") then
+    local _, subevent, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID, spellName = CombatLogGetCurrentEventInfo()
+    if subevent == "SPELL_CAST_SUCCESS" then
         local curSpell = GogoWatch.SpellIDs[spellID]
-        local Strings = GogoWatch.Strings
-        if curSpell == nil then
-            print(string.format(Strings.tempDevCastString, spellName, spellID))
-        else
-            local curRank = curSpell.Rank
-            local sourceLevel = UnitLevel("Player")
-            if curSpell.LevelBase == "Self" then
-                if curSpell.MaxLevel < sourceLevel and curSpell.MaxLevel ~= 0 then
-                    print(string.format(Strings.YouCastedSelf, curRank, spellName, spellID, sourceLevel, Strings.UseHigher))
+        if curSpell ~= nil then
+            if curSpell.MaxLevel ~= 0 then
+                local Strings = GogoWatch.Strings
+                local castLevel, castString = nil, nil
+                if curSpell.LevelBase == "Self" then
+                    castLevel = UnitLevel("Player")
+                    castString = Strings.SelfCast
+                elseif curSpell.LevelBase == "Target" then
+                    castLevel = UnitLevel(destName)
+                    castString = Strings.TargetCast
                 end
-            elseif curSpell.LevelBase == "Target" then
-                local destLevel = UnitLevel(destName)
-                if destLevel ~= 0 and curSpell.MaxLevel < destLevel and curSpell.MaxLevel ~= 0 then
-                    print(string.format(Strings.YouCastedSelf, curRank, spellName, spellID, destLevel, Strings.YouCastedTarget))
+                local castStringMsg = nil
+                if curSpell.MaxLevel < castLevel then
+                    castStringMsg = string.format(castString, spellName, spellID, castLevel)
+                    castStringMsg = string.format("%s%s%s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
+                end
+
+                if sourceGUID == UnitGUID("Player") then
+                    print(castStringMsg)
+                else
+                    for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                    for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
                 end
             end
         end

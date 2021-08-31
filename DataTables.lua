@@ -2,11 +2,13 @@ if GogoWatch == nill then GogoWatch = {} end
 
 GogoWatch.Strings =
 {
-    tempDevCastString = "You casted %s (%s), this spell is not being tracked ATM! (Temporary Message).",
-    YouCastedSelf     = "You casted Rank %d %s (%s) as a level %s",
-    YouCastedTarget   = "You casted Rank %d %s (%s) on a level %s target",
-    UseHigher         = ", you should be using a higher rank!",
-    TeamMeberToolTip  = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_4.png:0\124t GogoLoot : Team Member",
+    -- SubStrings
+    PreMsgStandard     = "{rt7} GogoWatch : ",
+    OtherPreMsg        = "Heyya Friend!",
+    SelfCast           = "You used a low rank %s (%s) as a level %s",
+    TargetCast         = "You used a low rank %s (%s) on a level %s target",
+    PostMessage        = "Please check your Action Bars or visit your Class Trainer to make sure you got the right ability for your level!",
+    TeamMeberToolTip   = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_4.png:0\124t GogoLoot : Team Member",
 }
 
 GogoWatch.Devs =
