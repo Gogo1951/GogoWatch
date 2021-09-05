@@ -1,8 +1,8 @@
-## Interface: 39170
-## Title: GogoWatch|cFF00FF00 v0.01|r
+## Interface: 20502
+## Title: GogoWatch|cFF00FF00 v2020.09.13|r
 ## Author: Gogo, Tex
 ## Notes: Get notified when you, or your fellow raiders, accidentally use low rank abilities.
-## Version: 0.01
+## Version: 2020.09.13
 ## RequiredDeps:
 ## SavedVariables: 
 ## SavedVariablesPerCharacter:
