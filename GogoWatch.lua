@@ -52,11 +52,13 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
                     castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
                 end
 
-                if sourceGUID == UnitGUID("Player") then
-                    print(castStringMsg)
-                else
-                    for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
-                    for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                if castStringMsg ~= nil then
+                    if sourceGUID == UnitGUID("Player") then
+                        print(castStringMsg)
+                    else
+                        for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                        for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                    end
                 end
             end
         end
