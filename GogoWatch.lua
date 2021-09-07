@@ -5,6 +5,8 @@ local EventFrame = nil
 
 local addonLoaded, variablesLoaded = false, false
 
+local AnnouncedSpells = {}
+
 function GogoWatch:OnLoad()
     EventFrame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
     EventFrame:RegisterEvent("VARIABLES_LOADED")
@@ -36,30 +38,35 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
         local curSpell = GogoWatch.SpellIDs[spellID]
         if curSpell ~= nil then
             if curSpell.MaxLevel ~= 0 then
-                local Strings = GogoWatch.Strings
-                local castLevel, castString = nil, nil
-                if curSpell.LevelBase == "Self" then
-                    castLevel = UnitLevel("Player")
-                    castString = Strings.SelfCast
-                elseif curSpell.LevelBase == "Target" then
-                    castLevel = UnitLevel(destName)
-                    castString = Strings.TargetCast
-                end
-                local spellLink = GetSpellLink(spellID)
-                local castStringMsg = nil
-                if curSpell.MaxLevel < castLevel then
-                    castStringMsg = string.format(castString, spellLink, spellID, castLevel)
-                    castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
-                end
+                local PlayerSpellIndex = string.format("%s-%s", sourceGUID, spellID)
+                if AnnouncedSpells[PlayerSpellIndex] == nil then
+                    local Strings = GogoWatch.Strings
+                    local castLevel, castString = nil, nil
+                    if curSpell.LevelBase == "Self" then
+                        castLevel = UnitLevel("Player")
+                        castString = Strings.SelfCast
+                    elseif curSpell.LevelBase == "Target" then
+                        castLevel = UnitLevel(destName)
+                        castString = Strings.TargetCast
+                    end
+                    local spellLink = GetSpellLink(spellID)
+                    local castStringMsg = nil
+                    if curSpell.MaxLevel < castLevel then
+                        castStringMsg = string.format(castString, spellLink, spellID, castLevel)
+                        castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
+                    end
 
-                if castStringMsg ~= nil then
-                    if sourceGUID == UnitGUID("Player") then
-                        castStringMsg = string.format("%s %s", Strings.PreMsgNonChat, castStringMsg)
-                        print(castStringMsg)
-                    else
-                        castStringMsg = string.format("%s %s", Strings.PreMsgChat, castStringMsg)
-                        for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
-                        for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                    if castStringMsg ~= nil then
+                        if sourceGUID == UnitGUID("Player") then
+                            castStringMsg = string.format("%s %s", Strings.PreMsgNonChat, castStringMsg)
+                            print(castStringMsg)
+                            AnnouncedSpells[PlayerSpellIndex] = true
+                        else
+                            castStringMsg = string.format("%s %s", Strings.PreMsgChat, castStringMsg)
+                            for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                            for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
+                            AnnouncedSpells[PlayerSpellIndex] = true
+                        end
                     end
                 end
             end
