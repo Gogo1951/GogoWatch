@@ -3,12 +3,14 @@ if GogoWatch == nill then GogoWatch = {} end
 GogoWatch.Strings =
 {
     -- SubStrings
-    PreMsgStandard     = "{rt7} GogoWatch : ",
+    PreMsgNonChat      = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_4.png:0\124t",
+    PreMsgChat         = "{rt7}",
+    PreMsgStandard     = "GogoWatch : ",
     OtherPreMsg        = "Heyya Friend!",
     SelfCast           = "You used a low rank %s (%s) as a level %s.",
     TargetCast         = "You used a low rank %s (%s) on a level %s target.",
     PostMessage        = "Please check your Action Bars or visit your Class Trainer to make sure you got the right ability for your level!",
-    TeamMeberToolTip   = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_4.png:0\124t GogoLoot : Team Member",
+    TeamMeberToolTip   = "GogoLoot : Team Member",
 }
 
 GogoWatch.Devs =

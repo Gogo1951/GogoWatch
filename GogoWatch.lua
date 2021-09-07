@@ -15,7 +15,7 @@ function GogoWatch:OnLoad()
     GameTooltip:HookScript("OnTooltipSetUnit", function(...)
         local curMouseOver = UnitGUID("MouseOver")
         if GogoWatch.Devs[curMouseOver] == true then
-            GameTooltip:AddLine(GogoWatch.Strings.TeamMeberToolTip)
+            GameTooltip:AddLine(string.format("%s %s", GogoWatch.Strings.PreMsgNonChat, GogoWatch.Strings.TeamMeberToolTip))
         end
     end)
 end
@@ -54,8 +54,10 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
 
                 if castStringMsg ~= nil then
                     if sourceGUID == UnitGUID("Player") then
+                        castStringMsg = string.format("%s %s", Strings.PreMsgNonChat, castStringMsg)
                         print(castStringMsg)
                     else
+                        castStringMsg = string.format("%s %s", Strings.PreMsgChat, castStringMsg)
                         for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
                         for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
                     end
