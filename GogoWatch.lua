@@ -12,6 +12,7 @@ function GogoWatch:OnLoad()
     EventFrame:RegisterEvent("VARIABLES_LOADED")
     EventFrame:RegisterEvent("ADDON_LOADED")
     EventFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+    EventFrame:RegisterEvent("GROUP_LEFT")
     EventFrame:SetScript("OnEvent", function(...) GogoWatch:OnEvent(...) end)
 
     GameTooltip:HookScript("OnTooltipSetUnit", function(...)
@@ -29,6 +30,8 @@ function GogoWatch:OnEvent(self, event, ...)
         GogoWatch.Events:AddonLoaded(...)
     elseif event == "COMBAT_LOG_EVENT_UNFILTERED" then
         GogoWatch.Events:CombatLogEventUnfiltered(...)
+    elseif event == "GROUP_LEFT" then
+        GogoWatch.Events:GroupLeft()
     end
 end
 
@@ -74,6 +77,13 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
     end
 end
 
+function GogoWatch.Events:GroupLeft()
+    for key, value in pairs(AnnouncedSpells) do
+        value = nil
+        AnnouncedSpells[key] = nil
+    end
+end
+
 function GogoWatch.Events:VarsAndAddonLoaded()
 
 end
@@ -90,3 +100,10 @@ function GogoWatch.Events:VariablesLoaded(...)
 end
 
 GogoWatch:OnLoad()
+
+GogoWatch.SlashCommands["RESET"] = function()
+    GogoWatch.Events:GroupLeft()
+end
+
+GogoWatch.SlashCommands["Reset"] = GogoWatch.SlashCommands["RESET"]
+GogoWatch.SlashCommands["reset"] = GogoWatch.SlashCommands["RESET"]
