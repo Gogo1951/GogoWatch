@@ -1,7 +1,7 @@
 ## Interface: 20502
 ## Title: GogoWatch|cFF00FF00 v2020.09.13|r
-## Author: Gogo, Tex
-## Notes: Automate your raid's improvement proicess! Get notified when you, or your fellow raiders, accidentally use low rank abilities.
+## Author: Gogo, Tex, Fathom
+## Notes: Automate your raid's improvement process! Get notified when you, or your fellow raiders, accidentally use low rank abilities.
 ## Version: 2020.09.13
 ## RequiredDeps:
 ## SavedVariables: 
