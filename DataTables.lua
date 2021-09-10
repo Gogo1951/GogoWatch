@@ -3,12 +3,11 @@ if GogoWatch == nill then GogoWatch = {} end
 GogoWatch.Strings =
 {
     -- SubStrings
-    PreMsgNonChat      = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_7.png:0\124t",
-    PreMsgChat         = "{rt7}",
+    PreMsgNonChat      = "\124TInterface\\TargetingFrame\\UI-RaidTargetingIcon_4.png:0\124t",
+    PreMsgChat         = "{rt7} Friendly Reminder!",
     PreMsgStandard     = "GogoWatch :",
-    OtherPreMsg        = "Friendly Reminder!",
-    SelfCast           = "You just used a low rank of %s.",
-    TargetCast         = "You just used a low rank of %s on a level %s target.",
+    SelfCast           = "You just used a low rank of %s (%s).",
+    TargetCast         = "You just used a low rank of %s (%s) on a level %s target.",
     PostMessage        = "Please check your Action Bars or visit your Class Trainer to make sure you've got the right ability for your level.",
     TeamMeberToolTip   = "GogoWatch : Team Member",
 }
