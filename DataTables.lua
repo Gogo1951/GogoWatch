@@ -15,17 +15,17 @@ GogoWatch.Strings =
 
 GogoWatch.Devs =
 {
-	["Player-4384-034A0A08"] = true, -- Gogorogue-Mankrik
-	["Player-4384-034A0A2C"] = true, -- Gogopaladin-Mankrik
-	["Player-4384-034A0A37"] = true, -- Gogomage-Mankrik
-	["Player-4384-034A0A47"] = true, -- Gogowarlock-Mankrik
-	["Player-4384-034A0E54"] = true, -- Gogobank-Mankrik
-	["Player-4384-034A0E78"] = true, -- Gogoshaman-Mankrik
-	["Player-4384-034A1572"] = true, -- Gogowarrior-Mankrik
-	["Player-4384-034A1586"] = true, -- Gogodruid-Mankrik
-	["Player-4384-034A1B16"] = true, -- Gogohunter-Mankrik
-	["Player-4384-034A2D79"] = true, -- Gogopriest-Mankrik
-	["Player-4453-0192C32D"] = true,  -- Tex Test
+    ["Player-4384-034A0A08"] = true, -- Gogorogue-Mankrik
+    ["Player-4384-034A0A2C"] = true, -- Gogopaladin-Mankrik
+    ["Player-4384-034A0A37"] = true, -- Gogomage-Mankrik
+    ["Player-4384-034A0A47"] = true, -- Gogowarlock-Mankrik
+    ["Player-4384-034A0E54"] = true, -- Gogobank-Mankrik
+    ["Player-4384-034A0E78"] = true, -- Gogoshaman-Mankrik
+    ["Player-4384-034A1572"] = true, -- Gogowarrior-Mankrik
+    ["Player-4384-034A1586"] = true, -- Gogodruid-Mankrik
+    ["Player-4384-034A1B16"] = true, -- Gogohunter-Mankrik
+    ["Player-4384-034A2D79"] = true, -- Gogopriest-Mankrik
+    ["Player-4453-0192C32D"] = true,  -- Tex Test
 }
 
 GogoWatch.SpellIDs =
