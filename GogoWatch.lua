@@ -51,7 +51,7 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
                     end
                     local spellLink = GetSpellLink(spellID)
                     local castStringMsg = nil
-                    if curSpell.MaxLevel < castLevel then
+                    if (curSpell.MaxLevel < castLevel and castLevel == 70) or (curSpell.MaxLevel < castLevel - 1 and castLevel < 70) then
                         castStringMsg = string.format(castString, spellLink, spellID, castLevel)
                         castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
                     end
