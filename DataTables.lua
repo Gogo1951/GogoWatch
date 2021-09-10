@@ -10,7 +10,7 @@ GogoWatch.Strings =
     SelfCast           = "You just used a low rank of %s.",
     TargetCast         = "You just used a low rank of %s on a level %s target.",
     PostMessage        = "Please check your Action Bars or visit your Class Trainer to make sure you've got the right ability for your level.",
-    TeamMeberToolTip   = "GogoLoot : Team Member",
+    TeamMeberToolTip   = "GogoWatch : Team Member",
 }
 
 GogoWatch.Devs =
