@@ -1729,11 +1729,9 @@ GogoWatch.SpellIDs =
   [9485 ] = {Name = "Shackle Undead", Rank =2, MaxLevel = 59, LevelBase = "Self",},
   [10955] = {Name = "Shackle Undead", Rank =3, MaxLevel = 70, LevelBase = "Self",},
   [40135] = {Name = "Shackle Undead", Rank =1, MaxLevel = 39, LevelBase = "Self",},
-  [20925] = {Name = "Holy Shield", Rank =1, MaxLevel = 49, LevelBase = "Self",},
   [20927] = {Name = "Holy Shield", Rank =2, MaxLevel = 59, LevelBase = "Self",},
   [20928] = {Name = "Holy Shield", Rank =3, MaxLevel = 69, LevelBase = "Self",},
-  [27179] = {Name = "Holy Shield", Rank =4, MaxLevel = 70, LevelBase = "Self",},
-  [32777] = {Name = "Holy Shield", Rank =1, MaxLevel = 49, LevelBase = "Self",},
+  [27179] = {Name = "Holy Shield", Rank =4, MaxLevel = 70, LevelBase = "Self",}
   [10595] = {Name = "Nature Resistance Totem", Rank =1, MaxLevel = 43, LevelBase = "Self",},
   [10600] = {Name = "Nature Resistance Totem", Rank =2, MaxLevel = 59, LevelBase = "Self",},
   [10601] = {Name = "Nature Resistance Totem", Rank =3, MaxLevel = 68, LevelBase = "Self",},
