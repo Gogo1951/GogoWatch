@@ -2121,7 +2121,6 @@ GogoWatch.SpellIDs =
   [30151] = {Name = "Intercept", Rank =1, MaxLevel = 41, LevelBase = "Self",},
   [30194] = {Name = "Intercept", Rank =2, MaxLevel = 51, LevelBase = "Self",},
   [30198] = {Name = "Intercept", Rank =3, MaxLevel = 60, LevelBase = "Self",},
-  [20375] = {Name = "Seal of Command", Rank =1, MaxLevel = 29, LevelBase = "Self",},
   [20915] = {Name = "Seal of Command", Rank =2, MaxLevel = 39, LevelBase = "Self",},
   [20918] = {Name = "Seal of Command", Rank =3, MaxLevel = 49, LevelBase = "Self",},
   [20919] = {Name = "Seal of Command", Rank =4, MaxLevel = 59, LevelBase = "Self",},
