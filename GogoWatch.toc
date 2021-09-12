@@ -1,8 +1,8 @@
 ## Interface: 20502
-## Title: GogoWatch|cFF00FF00 (2021-09-13)|r
+## Title: GogoWatch|cFF00FF00 (2021-09-12)|r
 ## Author: Gogo, Tex, Fathom
 ## Notes: Get Automatic Reminders When You, or Your Fellow Raiders, Accidentally Use Low Rank Abilities or Die to Avoidable Game Mechanics.
-## Version: 2021-09-13
+## Version: 2021-09-12
 ## RequiredDeps:
 ## SavedVariables: 
 ## SavedVariablesPerCharacter:
