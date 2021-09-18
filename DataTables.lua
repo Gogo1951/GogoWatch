@@ -541,20 +541,20 @@ GogoWatch.SpellIDs =
   -- [27618] = {Name = "Blizzard", Rank = 6 , MaxLevel = 67, LevelBase = "Self",}, -- All Ranks of Blizzard Are Ignored
   -- [42213] = {Name = "Blizzard", Rank = 6 , MaxLevel = 67, LevelBase = "Self",}, -- All Ranks of Blizzard Are Ignored
   -- [27085] = {Name = "Blizzard", Rank = 7 , MaxLevel = 70, LevelBase = "Self",}, -- All Ranks of Blizzard Are Ignored
-  -- [42198] = {Name = "Blizzard", Rank = 7 , MaxLevel = 70, LevelBase = "Self",}, -- All Ranks of Blizzard Are Ignored
-  [120] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [12557] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [12611] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [15244] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [20828] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [22746] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [29717] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [30095] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [34325] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [37265] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [38384] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [38644] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
-  [46984] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",},
+  [42198] = {Name = "Blizzard", Rank = 7 , MaxLevel = 70, LevelBase = "Self",},
+  -- [120] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [12557] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [12611] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [15244] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [20828] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [22746] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [29717] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [30095] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [34325] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [37265] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [38384] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [38644] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
+  -- [46984] = {Name = "Cone of Cold", Rank = 1 , MaxLevel = 33, LevelBase = "Self",}, -- Rank 1 used for Low Threat Slows
   [8492] = {Name = "Cone of Cold", Rank = 2 , MaxLevel = 41, LevelBase = "Self",},
   [10159] = {Name = "Cone of Cold", Rank = 3 , MaxLevel = 49, LevelBase = "Self",},
   [10160] = {Name = "Cone of Cold", Rank = 4 , MaxLevel = 57, LevelBase = "Self",},
@@ -1410,7 +1410,7 @@ GogoWatch.SpellIDs =
   [20609] = {Name = "Ancestral Spirit", Rank = 2 , MaxLevel = 35, LevelBase = "Self",},
   [20610] = {Name = "Ancestral Spirit", Rank = 3 , MaxLevel = 47, LevelBase = "Self",},
   [20776] = {Name = "Ancestral Spirit", Rank = 4 , MaxLevel = 59, LevelBase = "Self",},
-  [20777] = {Name = "Ancestral Spirit", Rank = 5 , MaxLevel = 68, LevelBase = "Self",},
+  [20777] = {Name = "Ancestral Spirit", Rank = 5 , MaxLevel = 70, LevelBase = "Self",},
   [3606] = {Name = "Attack", Rank = 1 , MaxLevel = 19, LevelBase = "Self",},
   [22048] = {Name = "Attack", Rank = 1 , MaxLevel = 19, LevelBase = "Self",},
   [38296] = {Name = "Attack", Rank = 1 , MaxLevel = 19, LevelBase = "Self",},
