@@ -14,6 +14,7 @@ GogoWatch.Strings =
 
 GogoWatch.Devs =
 {
+    -- /dump UnitGUID("Player")
     ["Player-4384-034A0A08"] = true, -- Gogorogue-Mankrik
     ["Player-4384-034A0A2C"] = true, -- Gogopaladin-Mankrik
     ["Player-4384-034A0A37"] = true, -- Gogomage-Mankrik
@@ -49,6 +50,7 @@ GogoWatch.SpellIDs =
   [26998] = {Name = "Demoralizing Roar", Rank = 6 , MaxLevel = 70, LevelBase = "Self",},
   -- [339] = {Name = "Entangling Roots", Rank = 1 , MaxLevel = 17, LevelBase = "Self",}, -- Rank 1 used to Escape Mobs
   -- [19975] = {Name = "Entangling Roots", Rank = 1 , MaxLevel = 17, LevelBase = "Self",}, -- Rank 1 used to Escape Mobs
+  -- [22800] = {Name = "Entangling Roots", Rank = 1 , MaxLevel = 17, LevelBase = "Self",}, -- Rank 1 used to Escape Mobs
   -- [40363] = {Name = "Entangling Roots", Rank = 1 , MaxLevel = 17, LevelBase = "Self",}, -- Rank 1 used to Escape Mobs
   [1062] = {Name = "Entangling Roots", Rank = 2 , MaxLevel = 27, LevelBase = "Self",},
   [19974] = {Name = "Entangling Roots", Rank = 2 , MaxLevel = 27, LevelBase = "Self",},
@@ -495,10 +497,8 @@ GogoWatch.SpellIDs =
   [25346] = {Name = "Arcane Missiles", Rank = 8 , MaxLevel = 63, LevelBase = "Self",},
   [27075] = {Name = "Arcane Missiles", Rank = 9 , MaxLevel = 63, LevelBase = "Self",},
   [27076] = {Name = "Arcane Missiles", Rank = 9 , MaxLevel = 63, LevelBase = "Self",},
-  [38699] = {Name = "Arcane Missiles", Rank = 10 , MaxLevel = 69, LevelBase = "Self",},
-  [38700] = {Name = "Arcane Missiles", Rank = 10 , MaxLevel = 69, LevelBase = "Self",},
-  [38703] = {Name = "Arcane Missiles", Rank = 11 , MaxLevel = 70, LevelBase = "Self",},
-  [38704] = {Name = "Arcane Missiles", Rank = 11 , MaxLevel = 70, LevelBase = "Self",},
+  [38699] = {Name = "Arcane Missiles", Rank = 10 , MaxLevel = 70, LevelBase = "Self",},
+  [38700] = {Name = "Arcane Missiles", Rank = 10 , MaxLevel = 70, LevelBase = "Self",},
   [11113] = {Name = "Blast Wave", Rank = 1 , MaxLevel = 35, LevelBase = "Self",},
   [15091] = {Name = "Blast Wave", Rank = 1 , MaxLevel = 35, LevelBase = "Self",},
   [15744] = {Name = "Blast Wave", Rank = 1 , MaxLevel = 35, LevelBase = "Self",},
@@ -647,8 +647,7 @@ GogoWatch.SpellIDs =
   [10150] = {Name = "Fireball", Rank = 10 , MaxLevel = 59, LevelBase = "Self",},
   [10151] = {Name = "Fireball", Rank = 11 , MaxLevel = 70, LevelBase = "Self",},
   [25306] = {Name = "Fireball", Rank = 12 , MaxLevel = 65, LevelBase = "Self",},
-  [27070] = {Name = "Fireball", Rank = 13 , MaxLevel = 69, LevelBase = "Self",},
-  [38692] = {Name = "Fireball", Rank = 14 , MaxLevel = 70, LevelBase = "Self",},
+  [27070] = {Name = "Fireball", Rank = 13 , MaxLevel = 70, LevelBase = "Self",},
   [13441] = {Name = "Firebolt", Rank = 1 , MaxLevel = 7, LevelBase = "Self",},
   [18083] = {Name = "Firebolt", Rank = 1 , MaxLevel = 7, LevelBase = "Self",},
   [18833] = {Name = "Firebolt", Rank = 1 , MaxLevel = 7, LevelBase = "Self",},
@@ -844,8 +843,7 @@ GogoWatch.SpellIDs =
   [25782] = {Name = "Greater Blessing of Might", Rank = 1 , MaxLevel = 59, LevelBase = "Self",},
   [29381] = {Name = "Greater Blessing of Might", Rank = 1 , MaxLevel = 59, LevelBase = "Self",},
   [33564] = {Name = "Greater Blessing of Might", Rank = 1 , MaxLevel = 59, LevelBase = "Self",},
-  [25916] = {Name = "Greater Blessing of Might", Rank = 2 , MaxLevel = 69, LevelBase = "Self",},
-  [27141] = {Name = "Greater Blessing of Might", Rank = 3 , MaxLevel = 70, LevelBase = "Self",},
+  [25916] = {Name = "Greater Blessing of Might", Rank = 2 , MaxLevel = 70, LevelBase = "Self",},
   [25899] = {Name = "Greater Blessing of Sanctuary", Rank = 1 , MaxLevel = 69, LevelBase = "Self",},
   [27169] = {Name = "Greater Blessing of Sanctuary", Rank = 2 , MaxLevel = 70, LevelBase = "Self",},
   [25894] = {Name = "Greater Blessing of Wisdom", Rank = 1 , MaxLevel = 59, LevelBase = "Self",},
@@ -1013,7 +1011,6 @@ GogoWatch.SpellIDs =
   [25312] = {Name = "Divine Spirit", Rank = 5 , MaxLevel = 70, LevelBase = "Self",},
   [32862] = {Name = "Drain Soul", Rank = 1 , MaxLevel = 23, LevelBase = "Self",},
   [35839] = {Name = "Drain Soul", Rank = 1 , MaxLevel = 23, LevelBase = "Self",},
-  -- [22800] = {Name = "Entangling Roots", Rank = 1 , MaxLevel = 17, LevelBase = "Self",}, -- Rank 1 used to Escape Mobs
   [586] = {Name = "Fade", Rank = 1 , MaxLevel = 19, LevelBase = "Self",},
   [9578] = {Name = "Fade", Rank = 2 , MaxLevel = 29, LevelBase = "Self",},
   [9579] = {Name = "Fade", Rank = 3 , MaxLevel = 39, LevelBase = "Self",},
@@ -1768,13 +1765,13 @@ GogoWatch.SpellIDs =
   [17952] = {Name = "Create Firestone", Rank = 3 , MaxLevel = 55, LevelBase = "Self",},
   [17953] = {Name = "Create Firestone", Rank = 4 , MaxLevel = 65, LevelBase = "Self",},
   [27250] = {Name = "Create Firestone", Rank = 5 , MaxLevel = 70, LevelBase = "Self",},
-  [6201] = {Name = "Create Healthstone", Rank = 1 , MaxLevel = 21, LevelBase = "Self",},
-  [28023] = {Name = "Create Healthstone", Rank = 1 , MaxLevel = 21, LevelBase = "Self",},
-  [6202] = {Name = "Create Healthstone", Rank = 2 , MaxLevel = 33, LevelBase = "Self",},
-  [5699] = {Name = "Create Healthstone", Rank = 3 , MaxLevel = 45, LevelBase = "Self",},
-  [11729] = {Name = "Create Healthstone", Rank = 4 , MaxLevel = 57, LevelBase = "Self",},
-  [11730] = {Name = "Create Healthstone", Rank = 5 , MaxLevel = 67, LevelBase = "Self",},
-  [27230] = {Name = "Create Healthstone", Rank = 6 , MaxLevel = 70, LevelBase = "Self",},
+  -- [6201] = {Name = "Create Healthstone", Rank = 1 , MaxLevel = 21, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [28023] = {Name = "Create Healthstone", Rank = 1 , MaxLevel = 21, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [6202] = {Name = "Create Healthstone", Rank = 2 , MaxLevel = 33, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [5699] = {Name = "Create Healthstone", Rank = 3 , MaxLevel = 45, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [11729] = {Name = "Create Healthstone", Rank = 4 , MaxLevel = 57, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [11730] = {Name = "Create Healthstone", Rank = 5 , MaxLevel = 67, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
+  -- [27230] = {Name = "Create Healthstone", Rank = 6 , MaxLevel = 70, LevelBase = "Self",}, -- Excluding this as a "Heal" because apparently some raids don't stagger Warlock Talents
   [693] = {Name = "Create Soulstone", Rank = 1 , MaxLevel = 29, LevelBase = "Self",},
   [20022] = {Name = "Create Soulstone", Rank = 1 , MaxLevel = 29, LevelBase = "Self",},
   [20752] = {Name = "Create Soulstone", Rank = 2 , MaxLevel = 39, LevelBase = "Self",},
@@ -2154,8 +2151,7 @@ GogoWatch.SpellIDs =
   [11566] = {Name = "Heroic Strike", Rank = 7 , MaxLevel = 55, LevelBase = "Self",},
   [11567] = {Name = "Heroic Strike", Rank = 8 , MaxLevel = 59, LevelBase = "Self",},
   [25286] = {Name = "Heroic Strike", Rank = 9 , MaxLevel = 65, LevelBase = "Self",},
-  [29707] = {Name = "Heroic Strike", Rank = 10 , MaxLevel = 69, LevelBase = "Self",},
-  [30324] = {Name = "Heroic Strike", Rank = 11 , MaxLevel = 70, LevelBase = "Self",},
+  [29707] = {Name = "Heroic Strike", Rank = 10 , MaxLevel = 70, LevelBase = "Self",},
   [20252] = {Name = "Intercept", Rank = 1 , MaxLevel = 60, LevelBase = "Self",},
   [27826] = {Name = "Intercept", Rank = 1 , MaxLevel = 41, LevelBase = "Self",},
   [20616] = {Name = "Intercept", Rank = 2 , MaxLevel = 68, LevelBase = "Self",},
@@ -2217,8 +2213,7 @@ GogoWatch.SpellIDs =
   [11600] = {Name = "Revenge", Rank = 4 , MaxLevel = 53, LevelBase = "Self",},
   [11601] = {Name = "Revenge", Rank = 5 , MaxLevel = 59, LevelBase = "Self",},
   [25288] = {Name = "Revenge", Rank = 6 , MaxLevel = 62, LevelBase = "Self",},
-  [25269] = {Name = "Revenge", Rank = 7 , MaxLevel = 69, LevelBase = "Self",},
-  [30357] = {Name = "Revenge", Rank = 8 , MaxLevel = 70, LevelBase = "Self",},
+  [25269] = {Name = "Revenge", Rank = 7 , MaxLevel = 70, LevelBase = "Self",},
   [72] = {Name = "Shield Bash", Rank = 1 , MaxLevel = 31, LevelBase = "Self",},
   [1671] = {Name = "Shield Bash", Rank = 2 , MaxLevel = 51, LevelBase = "Self",},
   [1672] = {Name = "Shield Bash", Rank = 3 , MaxLevel = 63, LevelBase = "Self",},
