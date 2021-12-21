@@ -33,45 +33,61 @@ function GogoWatch:OnEvent(self, event, ...)
 end
 
 function GogoWatch.Events:CombatLogEventUnfiltered(...)
-    local _, subevent, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID, spellName = CombatLogGetCurrentEventInfo()
-    if subevent == "SPELL_CAST_SUCCESS" then
-        local curSpell = GogoWatch.SpellIDs[spellID]
-        if curSpell ~= nil then
-            if curSpell.MaxLevel ~= 0 then
-                local PlayerSpellIndex = string.format("%s-%s", sourceGUID, spellID)
-                if AnnouncedSpells[PlayerSpellIndex] == nil then
-                    local Strings = GogoWatch.Strings
-                    local castLevel, castString = nil, nil
-                    if curSpell.LevelBase == "Self" then
-                        castLevel = UnitLevel(sourceName)
-                        castString = Strings.SelfCast
-                    elseif curSpell.LevelBase == "Target" then
-                        castLevel = UnitLevel(destName)
-                        castString = Strings.TargetCast
-                    end
-                    local spellLink = GetSpellLink(spellID)
-                    local castStringMsg = nil
-                    if curSpell.MaxLevel < castLevel then
-                        castStringMsg = string.format(castString, spellLink, spellID, castLevel)
-                        castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
-                    end
+    local _, subevent, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID, _ = CombatLogGetCurrentEventInfo()
 
-                    if castStringMsg ~= nil then
-                        if sourceGUID == UnitGUID("Player") then
-                            castStringMsg = string.format("%s %s", Strings.PreMsgNonChat, castStringMsg)
-                            print(castStringMsg)
-                            AnnouncedSpells[PlayerSpellIndex] = true
-                        else
-                            castStringMsg = string.format("%s %s", Strings.PreMsgChat, castStringMsg)
-                            for i = 1,  4 do if sourceGUID == UnitGUID("Party" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
-                            for i = 1, 40 do if sourceGUID == UnitGUID( "Raid" .. i) then SendChatMessage(castStringMsg, "WHISPER", nil, sourceName) break end end
-                            AnnouncedSpells[PlayerSpellIndex] = true
-                        end
-                    end
-                end
-            end
+    if subevent ~= "SPELL_CAST_SUCCESS" then return end
+
+    local curSpell = GogoWatch.SpellIDs[spellID]
+
+    if curSpell == nil or curSpell.MaxLevel == 0 then return end
+
+    local playerSpellIndex = string.format("%s-%s", sourceGUID, spellID)
+
+    if AnnouncedSpells[playerSpellIndex] ~= nil then return end
+
+    local Strings = GogoWatch.Strings
+    local castLevel, castString = nil, nil
+
+    if curSpell.LevelBase == "Self" then
+        castLevel = UnitLevel(sourceName)
+        castString = Strings.SelfCast
+    elseif curSpell.LevelBase == "Target" then
+        castLevel = UnitLevel(destName)
+        castString = Strings.TargetCast
+    end
+
+    if curSpell.MaxLevel >= castLevel then return end
+
+    local spellLink = GetSpellLink(spellID)
+
+    local castStringMsg = string.format(castString, spellLink, spellID, castLevel)
+    castStringMsg = string.format("%s%s %s", Strings.PreMsgStandard, castStringMsg, Strings.PostMessage)
+
+    if sourceGUID == UnitGUID("Player") then
+        castStringMsg = string.format("%s %s", Strings.PreMsgNonChat, castStringMsg)
+        print(castStringMsg)
+        AnnouncedSpells[playerSpellIndex] = true
+    elseif not GogoWatch:InGroupWith(sourceGUID) then
+        return
+    else
+        castStringMsg = string.format("%s %s", Strings.PreMsgChat, castStringMsg)
+        SendChatMessage(castStringMsg, "WHISPER", nil, sourceName)
+        AnnouncedSpells[playerSpellIndex] = true
+    end
+end
+
+function GogoWatch:InGroupWith(guid)
+    if IsInRaid() then
+        for i = 1, GetNumGroupMembers() do
+            if guid == UnitGUID("Raid" .. i) then return true end
+        end
+    elseif IsInGroup() then
+        for i = 1, GetNumGroupMembers() do
+            if guid == UnitGUID("Party" .. i) then return true end
         end
     end
+
+    return false
 end
 
 function GogoWatch.Events:VarsAndAddonLoaded()
