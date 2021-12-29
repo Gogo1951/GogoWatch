@@ -46,7 +46,7 @@ function GogoWatch.Events:CombatLogEventUnfiltered(...)
                     local Strings = GogoWatch.Strings
                     local castLevel, castString = nil, nil
                     if curSpell.LevelBase == "Self" then
-                        castLevel = UnitLevel("Player")
+                        castLevel = UnitLevel(sourceName)
                         castString = Strings.SelfCast
                     elseif curSpell.LevelBase == "Target" then
                         castLevel = UnitLevel(destName)
