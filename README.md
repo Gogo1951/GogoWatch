@@ -3,6 +3,7 @@
 GogoWatch was a fun project, and I helped port the features over to RankSentinel where it can be properly maintained. 
 
 https://www.curseforge.com/wow/addons/ranksentinel
+
 https://github.com/valkyrnstudios/RankSentinel
 
 
