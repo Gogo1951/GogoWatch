@@ -1,3 +1,11 @@
+# Use RankSentinel
+
+GogoWatch was a fun project, and I helped port the features over to RankSentinel where it can be properly maintained. 
+
+https://www.curseforge.com/wow/addons/ranksentinel
+https://github.com/valkyrnstudios/RankSentinel
+
+
 # GogoWatch
 
 * GogoWatch scans the combat log and alerts players who mistakenly use low-rank abilities, like the legacy add-on RankWatch.
